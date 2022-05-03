@@ -8,7 +8,6 @@ import SignUpForm from './signUpForm'
 
 const Home = props => (
   <Layout>
-    <h1>Home page react is working</h1>
     <SignUpForm>
     </SignUpForm>
   </Layout>
