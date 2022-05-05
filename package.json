@@ -21,5 +21,25 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3"
-  }
+  },
+  "description": "Visit [Altcademy Classroom](https://www.altcademy.com/classroom/) for more instructions.",
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jones89-dan/fullStack-Twitter-Clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jones89-dan/fullStack-Twitter-Clone/issues"
+  },
+  "homepage": "https://github.com/jones89-dan/fullStack-Twitter-Clone#readme"
 }
