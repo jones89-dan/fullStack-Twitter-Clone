@@ -4,7 +4,11 @@ module Api
       @user = User.new(user_params)
 
       if @user.save
-        render 'api/users/create'
+        render json: {
+          user: {
+            username: @user.username
+          }
+        }
       else
         render json: {
           success: false
@@ -15,7 +19,7 @@ module Api
     private
 
       def user_params
-        params.require(:user).permit(:email, :password, :username)
+        params.require(:user).permit(:username, :email, :password)
       end
   end
 end

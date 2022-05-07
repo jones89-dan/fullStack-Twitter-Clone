@@ -22,7 +22,7 @@ const SignUpForm  = () => {
         console.log(response.error);
       }
       else {
-        console.log('User signed up')
+        console.log('User ' + userName + ' signed up')
       }
     });
   }
