@@ -11,21 +11,20 @@ function Request() {
   }
 };
 
-function createUser(username, email, password, callback) {
-  var newRequest = new Request();
-  newRequest['type'] = 'POST';
-  newRequest['url'] = 'api/users';
-  newRequest['data'] = {
-    'user': {
-      'username': username,
-      'email': email,
-      'password': password
+export var createUser = function (username, email, password, callback) {
+  var request = {
+    type: 'POST',
+    url: 'api/users',
+    data: {
+      user: {
+        username: username,
+        email: email,
+        password: password
+      }
+    },
+    success: function (response) {
+      callback(response);
     }
   };
-  newRequest['success'] = function(response){
-    console.log(response);
-    return callback();
-  };
-
-  $.ajax(newRequest);
+  $.ajax(request);
 };

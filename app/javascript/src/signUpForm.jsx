@@ -5,31 +5,31 @@ import { createUser } from '../packs/requests'
 // Attempting to handle the form submission using React props
 const SignUpForm  = () => {
 
-  const handlFormSubmission = (event) => {
+  const handleFormSubmission = (event) => {
     //var userName = this.state.userName;
     //var userEmail = this.state.userEmail;
     //var userPassword = this.state.userPassword;
+    event.preventDefault();
 
-    var userName = $('.sign-up .username').val();
-    var userEmail = $('.sign-up .email').val();
-    var userPassword = $('.sign-up .password').val();
+    var userName = $('.username').val();
+    var userEmail = $('.email').val();
+    var userPassword = $('.password').val();
+
+    console.log("form works");
 
     createUser(userName, userEmail, userPassword, function (response) {
       if (response.success == false) {
-        setSignUpMessage(response.error);
+        console.log(response.error);
       }
       else {
-        setSignUpMessage("Success! Please log in");
-        $('.username').val('');
-        $('.email').val('');
-        $('.password').val('');
+        console.log('User signed up')
       }
     });
   }
 
     return (
       <div className="sign-up col-xs-4 col-xs-offset-1">
-        <form>
+        <form onSubmit={handleFormSubmission}>
           <div className="new-to-t">
             <p><strong>New to Twitter?</strong><span> Sign Up</span></p>
           </div>
@@ -42,10 +42,10 @@ const SignUpForm  = () => {
           <div className="form-group">
             <input type="password" className="form-control password" placeholder="Password"/>
           </div>
-          <button onSubmit={handlFormSubmission} id="sign-up-btn" className="btn btn-default btn-warning pull-right">Sign up for Twitter</button>
+          <button type="submit" id="sign-up-btn" className="btn btn-default btn-warning pull-right">Sign up for Twitter</button>
         </form>
       </div>
-    );
+    )
 }
 
 export default SignUpForm;
