@@ -16,8 +16,11 @@ Rails.application.routes.draw do
     delete '/tweets/:id'           => 'tweets#destroy'
     get  '/users/:username/tweets' => 'tweets#index_by_user'
     get  '/tweets/search/:keyword' => 'tweets#search'
+
   end
 
-  get '*path' => 'static_pages#home'
+  get '/tweetsFeed'              => 'static_pages#tweetsFeed'
+
+  #get '*path' => 'static_pages#home'
   # if you are using active storage to upload and store images, comment the above line
 end
