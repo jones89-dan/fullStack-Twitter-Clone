@@ -5,6 +5,7 @@ import { createUser, signInUser } from '../packs/requests'
 // Attempting to handle the form submission using React props
 const SignUpForm  = () => {
 
+// Create a new user
   const handleFormSubmission = (event) => {
     event.preventDefault();
 
@@ -22,6 +23,7 @@ const SignUpForm  = () => {
     });
   }
 
+// Log in existing user
   const logIn = (event) => {
     event.preventDefault();
 
@@ -39,6 +41,8 @@ const SignUpForm  = () => {
       }
     });
   }
+
+  // Authenticate users
 
     return (
     <div>

@@ -56,3 +56,15 @@ export var signInUser = function (username, password, callback) {
   };
   $.ajax(request);
 };
+
+// Authenticate User
+export var authenticate = function (successCB, errorCB) {
+  var request = {
+    type: 'GET',
+    url: 'api/authenticated',
+    success: function (response) {
+      callback(response);
+    }
+  };
+  $.ajax(request);
+};
