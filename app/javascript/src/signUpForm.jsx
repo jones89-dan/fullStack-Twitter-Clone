@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import { createUser, signInUser } from '../packs/requests'
-// Attempting to handle the form submission using React props
+import { createUser, signInUser, authenticate } from '../packs/requests'
+
 const SignUpForm  = () => {
 
 // Create a new user
@@ -34,15 +34,20 @@ const SignUpForm  = () => {
 
     signInUser(userName, userPassword, function (response) {
       if (response.success == false) {
-        console.log(response.error);
+        console.log(response.error)
       }
-      else {
-        console.log('User ' + userName + ' logged in')
+      else{
+        console.log('User ' + userName + ' logged in');
+        
+        authenticate(function(response) {
+          if (response.authenticated == true) {
+            window.location.assign('/tweetsFeed');
+          }
+        });
       }
     });
   }
-
-  // Authenticate users
+  // Authenticate user
 
     return (
     <div>

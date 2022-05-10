@@ -58,7 +58,7 @@ export var signInUser = function (username, password, callback) {
 };
 
 // Authenticate User
-export var authenticate = function (successCB, errorCB) {
+export var authenticate = function (callback) {
   var request = {
     type: 'GET',
     url: 'api/authenticated',
