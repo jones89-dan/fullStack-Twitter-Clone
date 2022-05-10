@@ -10,7 +10,9 @@ module Api
           httponly: true
         }
 
-        render 'api/sessions/create'
+         render json: {
+           success: true
+         }
       else
         render json: {
           success: false
