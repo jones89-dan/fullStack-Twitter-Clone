@@ -11,10 +11,11 @@ module Api
       user = session.user
       @tweet = user.tweets.new(tweet_params)
 
-      if @tweet.save
-        TweetMailer.notify(@tweet).deliver!
-        render 'api/tweets/create'
-      end
+    # Removed to test new tweet POST
+    #  if @tweet.save
+      #  TweetMailer.notify(@tweet).deliver!
+      #  render 'api/tweets/create'
+    #  end
     end
 
     def destroy

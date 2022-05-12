@@ -80,7 +80,7 @@ export var postTweet = function (msg, image, callback) {
   }
   var newRequest = {};
   newRequest['type'] = 'POST';
-  newRequest['url'] = 'tweets';
+  newRequest['url'] = 'api/tweets';
   newRequest['cache'] = false;
   newRequest['contentType'] = false;
   newRequest['processData'] = false;

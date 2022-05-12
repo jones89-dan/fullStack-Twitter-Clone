@@ -10,7 +10,16 @@ const TweetsFeed = () => {
   const newTweet = (event) => {
     event.preventDefault();
     var message = $('.a-tweet').val();
-    console.log("tweet sumbmited: " + message);
+    var img = document.getElementById('image-select').files[0];
+
+    postTweet(message, img, function (response) {
+      if (response.success == false) {
+        console.log("Ooops, something went wrong");
+      }
+      else {
+        console.log("tweet posted successfully!");
+      }
+    });
   }
 
   return (
