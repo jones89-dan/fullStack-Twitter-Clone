@@ -69,7 +69,8 @@ export var authenticate = function (callback) {
   $.ajax(request);
 };
 
-export postTweet(msg, image, callback) {
+// Post a Tweet
+export var postTweet = function (msg, image, callback) {
   var formData = new FormData();
   if (msg) {
     formData.append('tweet[message]', msg);
