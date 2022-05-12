@@ -38,7 +38,7 @@ const SignUpForm  = () => {
       }
       else{
         console.log('User ' + userName + ' logged in');
-        
+        // Authenticate User
         authenticate(function(response) {
           if (response.authenticated == true) {
             window.location.assign('/tweetsFeed');
@@ -47,7 +47,6 @@ const SignUpForm  = () => {
       }
     });
   }
-  // Authenticate user
 
     return (
     <div>

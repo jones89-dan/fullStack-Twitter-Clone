@@ -68,3 +68,31 @@ export var authenticate = function (callback) {
   };
   $.ajax(request);
 };
+
+export postTweet(msg, image, callback) {
+  var formData = new FormData();
+  if (msg) {
+    formData.append('tweet[message]', msg);
+  }
+  if (image) {
+    formData.append('tweet[image]', image, image.name);
+  }
+  var newRequest = {};
+  newRequest['type'] = 'POST';
+  newRequest['url'] = 'tweets';
+  newRequest['cache'] = false;
+  newRequest['contentType'] = false;
+  newRequest['processData'] = false;
+  newRequest['xhrFields'] = { 'withCredentials': true };
+  newRequest['data'] = formData;
+  newRequest['success'] = function(response){
+    console.log(response);
+    return callback({'success': true});
+  };
+  newRequest['error'] = function(request, error){
+    console.log(request);
+    console.log(error);
+  };
+
+  $.ajax(newRequest);
+};
