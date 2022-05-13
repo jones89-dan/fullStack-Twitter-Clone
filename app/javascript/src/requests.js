@@ -99,7 +99,7 @@ export var postTweet = function (msg, image, callback) {
 };
 
 // Index Tweets
-export var indexTweet = function (successCB, errorCB) {
+export var indexTweets = function (successCB, errorCB) {
   var request = {
     type: 'GET',
     url: 'api/tweets',

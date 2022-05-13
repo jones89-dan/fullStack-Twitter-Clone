@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Layout from './layout';
-import { postTweet, indexTweet } from './requests'
+import { postTweet, indexTweets } from './requests'
 
 
 const TweetsFeed = () => {
@@ -23,13 +23,14 @@ const TweetsFeed = () => {
         console.log("Ooops, something went wrong");
       }
       else {
+        indexTweets(allTweets);
         console.log("tweet posted successfully!");
       }
     });
   }
 
   useEffect(() => {
-    indexTweet(allTweets);
+    indexTweets(allTweets);
   }, []);
 
   return (
@@ -50,7 +51,7 @@ const TweetsFeed = () => {
       </form>
         <div className="feed">
 
-        {tweets.map(tweet => {
+        {tweets.map(function(tweet) {
           return (
             <div className="tweet col-xs-12" key={tweet.id}>
               <a className="tweet-username" href="#">{tweet.username}</a>
