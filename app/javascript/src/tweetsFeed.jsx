@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Layout from './layout';
-import { postTweet } from '../packs/requests'
+import { postTweet, indexTweet } from '../packs/requests'
 
 
 const TweetsFeed = () => {
+
+  const [tweets, setTweets] = useState([]);
+
+  const allTweets = function (response) {
+    setTweets(response.tweets.map(tweet => tweet));
+  };
 
   const newTweet = (event) => {
     event.preventDefault();
@@ -21,6 +27,10 @@ const TweetsFeed = () => {
       }
     });
   }
+
+  useEffect(() => {
+    indexTweet(allTweets);
+  }, []);
 
   return (
     <Layout>
@@ -39,22 +49,18 @@ const TweetsFeed = () => {
         </div>
       </form>
         <div className="feed">
-          <div className="tweet col-xs-12">
-            <a className="tweet-username" href="#">User</a>
-            <a className="tweet-screenName" href="#">@User</a>
-            <p>This is an amazing tweet</p>
-            <a className="delete-tweet" href="#">Delete</a>
-          </div>
-          <div className="tweet col-xs-12">
-            <a className="tweet-username" href="#">User</a>
-            <a className="tweet-screenName" href="#">@User</a>
-            <p>This is an amazing tweet</p>
-          </div>
-          <div className="tweet col-xs-12">
-            <a className="tweet-username" href="#">User</a>
-            <a className="tweet-screenName" href="#">@User</a>
-            <p>This is an amazing tweet</p>
-          </div>
+
+        {tweets.map(tweet => {
+          return (
+            <div className="tweet col-xs-12" key={tweet.id}>
+              <a className="tweet-username" href="#">{tweet.username}</a>
+              <a className="tweet-screenName" href="#">@User</a>
+              <p>{tweet.message}</p>
+              <a className="delete-tweet" href="#">Delete</a>
+            </div>
+          )
+        })}
+  
         </div>
       </Layout>
     )
