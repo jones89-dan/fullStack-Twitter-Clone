@@ -69,6 +69,18 @@ export var authenticate = function (callback) {
   $.ajax(request);
 };
 
+// Log out user (delete session)
+export var logOutUser = function (callback) {
+  var request = {
+    type: 'DELETE',
+    url: 'api/sessions',
+    success: function (response) {
+      callback(response);
+    }
+  };
+  $.ajax(request);
+};
+
 // Post a Tweet
 export var postTweet = function (msg, image, callback) {
   var formData = new FormData();
