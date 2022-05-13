@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import { createUser, signInUser, authenticate } from '../packs/requests'
+import { createUser, signInUser, authenticate } from './requests'
 
 const SignUpForm  = () => {
 

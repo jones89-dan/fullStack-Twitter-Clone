@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Layout from './layout';
-import { postTweet, indexTweet } from '../packs/requests'
+import { postTweet, indexTweet } from './requests'
 
 
 const TweetsFeed = () => {
@@ -60,7 +60,7 @@ const TweetsFeed = () => {
             </div>
           )
         })}
-  
+
         </div>
       </Layout>
     )
