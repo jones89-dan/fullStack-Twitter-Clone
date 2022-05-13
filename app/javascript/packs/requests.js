@@ -97,3 +97,15 @@ export var postTweet = function (msg, image, callback) {
 
   $.ajax(newRequest);
 };
+
+// Index Tweets
+export var indexTweet = function (successCB, errorCB) {
+  var request = {
+    type: 'GET',
+    url: 'api/tweets',
+    success: successCB,
+    error: errorCB
+  }
+
+  $.ajax(request);
+};
