@@ -100,6 +100,7 @@ export var postTweet = function (msg, image, callback) {
   newRequest['data'] = formData;
   newRequest['success'] = function(response){
     console.log(response);
+    console.log(msg);
     return callback({'success': true});
   };
   newRequest['error'] = function(request, error){
