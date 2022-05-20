@@ -4,7 +4,6 @@ import $ from 'jquery';
 import Layout from './layout';
 import { postTweet, indexTweets } from './requests'
 
-
 const TweetsFeed = () => {
 
   const [tweets, setTweets] = useState([]);
@@ -29,8 +28,6 @@ const TweetsFeed = () => {
       }
     });
   }
-
-
 
   useEffect(() => {
     indexTweets(allTweets);
