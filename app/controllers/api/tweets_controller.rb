@@ -12,10 +12,10 @@ module Api
       @tweet = user.tweets.new(tweet_params)
 
     # Removed to test new tweet POST
-    #  if @tweet.save
+     if @tweet.save
       #  TweetMailer.notify(@tweet).deliver!
-      #  render 'api/tweets/create'
-    #  end
+       render 'api/tweets/create'
+     end
     end
 
     def destroy

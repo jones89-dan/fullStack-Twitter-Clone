@@ -24,7 +24,7 @@ const TweetsFeed = () => {
         console.log("Ooops, something went wrong");
       }
       else {
-        indexTweets(allTweets);
+        getTweetsAndPost();
         console.log("tweet posted successfully!");
       }
     });
