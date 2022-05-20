@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Layout from './layout';
-import { postTweet, indexTweets } from './requests'
+import { postTweet, indexTweets, deleteTweet } from './requests'
 
 const TweetsFeed = () => {
 
@@ -23,10 +23,15 @@ const TweetsFeed = () => {
         console.log("Ooops, something went wrong");
       }
       else {
-        getTweetsAndPost();
+        indexTweets(allTweets);
         console.log("tweet posted successfully!");
       }
     });
+  }
+
+  const removeTweet = (event) => {
+    event.preventDefault();
+    deleteTweet();
   }
 
   useEffect(() => {

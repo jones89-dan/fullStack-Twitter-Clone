@@ -107,7 +107,6 @@ export var postTweet = function (msg, image, callback) {
     console.log(request);
     console.log(error);
   };
-
   $.ajax(newRequest);
 };
 
@@ -118,7 +117,20 @@ export var indexTweets = function (successCB, errorCB) {
     url: 'api/tweets',
     success: successCB,
     error: errorCB
-  }
+  };
+  $.ajax(request);
+};
 
+// Delete Tweet
+export var deleteTweet = function (id, callback) {
+  var request = {
+    type: 'DELETE',
+    url: 'api/tweets/' + id,
+    success: function (response) {
+      if (response.success == true) {
+        callback();
+      }
+    }
+  };
   $.ajax(request);
 };
