@@ -30,27 +30,10 @@ const TweetsFeed = () => {
     });
   }
 
-  function getTweetsAndPost() {
-    indexTweets(function(tweets){
-      $('.feed').text('');
-      $.each(tweets, function(index){
-          var html = '<div class="tweet col-xs-12"> \
-            <a class="tweet-username" href="#">'+tweets[index]['username']+'</a> \
-            <a class="tweet-screenName" href="#">@'+tweets[index]['username']+'</a>'
 
-          if (tweets[index]['image'] !== undefined) {
-            html += '<img src="' + tweets[index]['image'] + '" class="img img-responsive">'
-          }
-
-          html += '<p>'+tweets[index]['message']+'</p> \
-            </div>'
-          $('.feed').prepend(html);
-      });
-    });
-  }
 
   useEffect(() => {
-    getTweetsAndPost();
+    indexTweets(allTweets);
   }, []);
 
   return (
@@ -70,6 +53,16 @@ const TweetsFeed = () => {
         </div>
       </form>
         <div className="feed">
+          {tweets.map(tweet => {
+            return (
+              <div className="tweet col-xs-12" key={tweet.id}>
+                <a className="tweet-username" href="#">{tweet.username}</a>
+                <a className="tweet-screenName" href="#">@User</a>
+                <p>{tweet.message}</p>
+                <a className="delete-tweet" href="#">Delete</a>
+              </div>
+            )
+          })}
         </div>
       </Layout>
     )
