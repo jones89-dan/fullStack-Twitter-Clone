@@ -30,8 +30,10 @@ const TweetsFeed = () => {
   }
 
   const removeTweet = (event) => {
-    event.preventDefault();
-    deleteTweet();
+    var id = event.target.dataset.id;
+    deleteTweet(id, function () {
+      indexTweets(allTweets);
+    });
   }
 
   useEffect(() => {
@@ -61,7 +63,7 @@ const TweetsFeed = () => {
                 <a className="tweet-username" href="#">{tweet.username}</a>
                 <a className="tweet-screenName" href="#">@User</a>
                 <p>{tweet.message}</p>
-                <a className="delete-tweet" href="#">Delete</a>
+                <a className="delete-tweet" data-id={tweet.id} onClick={removeTweet}>Delete</a>
               </div>
             )
           })}
