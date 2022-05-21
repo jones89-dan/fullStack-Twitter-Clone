@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Layout from './layout';
-import { postTweet, indexTweets, deleteTweet } from './requests'
+import { postTweet, indexTweets, deleteTweet, getCurrentUser } from './requests'
 
 const TweetsFeed = () => {
 

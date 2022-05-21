@@ -134,3 +134,15 @@ export var deleteTweet = function (id, callback) {
   };
   $.ajax(request);
 };
+
+// Gets the current user
+export var getCurrentUser = function (callback) {
+  authenticateUser(function (response) {
+    if (response.authenticated == true) {
+      callback(response);
+    }
+    else if (response.authenticated == false) {
+      window.location.replace('/');
+    }
+  });
+};
