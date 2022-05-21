@@ -137,7 +137,7 @@ export var deleteTweet = function (id, callback) {
 
 // Gets the current user
 export var getCurrentUser = function (callback) {
-  authenticateUser(function (response) {
+  authenticate(function (response) {
     if (response.authenticated == true) {
       callback(response);
     }
