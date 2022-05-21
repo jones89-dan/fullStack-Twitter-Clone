@@ -7,7 +7,7 @@ import { postTweet, indexTweets, deleteTweet, getCurrentUser } from './requests'
 const TweetsFeed = () => {
 
   const [tweets, setTweets] = useState([]);
-  var currentUser;
+  const [currentUser, setCurrentUser] = useState("");
 
   const allTweets = function (response) {
     setTweets(response.tweets.map(tweet => tweet));
@@ -37,6 +37,9 @@ const TweetsFeed = () => {
   }
 
   useEffect(() => {
+    getCurrentUser(function (response) {
+      setCurrentUser(response.username);
+    });
     indexTweets(allTweets);
   }, []);
 
@@ -60,8 +63,8 @@ const TweetsFeed = () => {
           {tweets.map(tweet => {
             return (
               <div className="tweet col-xs-12" key={tweet.id}>
-                <a className="tweet-username" href="#">{tweet.username}</a>
-                <a className="tweet-screenName" href="#">@User</a>
+
+                <a className="tweet-screenName" href={"/" + currentUser}>@{tweet.username}</a>
                 <p>{tweet.message}</p>
                 <a className="delete-tweet" data-id={tweet.id} onClick={removeTweet}>Delete</a>
               </div>

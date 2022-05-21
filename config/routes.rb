@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   end
 
   get '/tweetsFeed'              => 'static_pages#tweetsFeed'
+  get '/:username'               => 'static_pages#userFeed'
 
   #get '*path' => 'static_pages#home'
   # if you are using active storage to upload and store images, comment the above line
