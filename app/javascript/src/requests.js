@@ -146,3 +146,20 @@ export var getCurrentUser = function (callback) {
     }
   });
 };
+
+// Index users tweets
+export var userIndexTweets = function (username, callback) {
+  var request = {
+    type: 'GET',
+    url: '/api/users/' + username + '/tweets',
+    success: function (response) {
+      if (response.error) {
+        window.location.replace('/tweetsFeed');
+      }
+      else {
+        callback(response);
+      }
+    }
+  }
+  $.ajax(request);
+}
