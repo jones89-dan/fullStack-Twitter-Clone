@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Layout from './layout';
+import './feed.scss';
 import { postTweet, indexTweets, deleteTweet, getCurrentUser } from './requests'
 
 const TweetsFeed = () => {
@@ -60,12 +61,12 @@ const TweetsFeed = () => {
           </div>
         </div>
       </form>
-        <div className="feed">
+        <div className="feed mb-3">
           {tweets.map(tweet => {
             return (
               <div className="tweet col-xs-12" key={tweet.id}>
 
-                <a className="tweet-screenName" data-id={tweet.username} href={"/" + tweet.username}>@{tweet.username}</a>
+                <a className="tweet-username" data-id={tweet.username} href={"/" + tweet.username}>@{tweet.username}</a>
                 <p>{tweet.message}</p>
                 <a className="delete-tweet " data-id={tweet.id} onClick={removeTweet}>Delete</a>
               </div>

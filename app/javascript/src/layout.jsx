@@ -22,7 +22,7 @@ const Layout = (props) => {
     <React.Fragment>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="container">
-          <a className="navbar-brand" href='#'>Twitter Clone</a>
+          <a className="navbar-brand" href='/'>Twitter Clone</a>
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav">
                 <li className="nav-item">
@@ -38,12 +38,12 @@ const Layout = (props) => {
             </div>
         </div>
       </nav>
-      <div className="container py-3">
+      <div className="container py-3 pb-5 mb-5">
         {props.children}
       </div>
-      <footer className="footer-fixed-bottom p-3 bg-dark">
+      <footer className="fixed-bottom p-3 bg-dark">
         <div className="container">
-          <span className="me-3 text-secondary">Built by <a href="https://github.com/jones89-dan">jones89-Dan</a> with ☕ and ⚔️ </span>
+          <span className="me-3 text-secondary">Built by <a href="https://github.com/jones89-dan">jones89-Dan</a> with ☕ &nbsp;and ⚔️ </span>
         </div>
       </footer>
     </React.Fragment>
