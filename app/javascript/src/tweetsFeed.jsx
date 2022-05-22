@@ -48,7 +48,7 @@ const TweetsFeed = () => {
   return (
     <Layout>
       <form onSubmit={newTweet}>
-        <div className="col-xs-6 feed-box">
+        <div className="col-xs-6 feed-box text-white">
           <div className="col-xs-12 post-tweet-box">
             <textarea type="text" className="form-control post-input a-tweet" rows="3" placeholder="What's happening?"></textarea>
             <div className="pull-right">

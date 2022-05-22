@@ -53,11 +53,11 @@ const SignUpForm  = () => {
 
     return (
       <div className="row">
-        <div id="homeLeft" className="col-6 d-none d-lg-flex px-0">
+        <div id="homeLeft" className="col-6 d-none d-lg-flex px-0" >
           <img className="img-fluid pr-4 ps-0" src={image} alt="space x launch"></img>
         </div>
         <div className="login-signup col-6">
-            <div className="float-right sign-up ">
+            <div className="float-right sign-up text-white">
               <form onSubmit={handleFormSubmission}>
                 <div className="new-to-t">
                   <p><strong>New to Twitter?</strong><span> Sign Up</span></p>
@@ -75,7 +75,7 @@ const SignUpForm  = () => {
               </form>
             </div>
 
-              <div className="sign-in ">
+              <div className="sign-in text-white">
                 <form onSubmit={logIn}>
                   <div className="signin-to-t">
                     <p><strong>Welcome back to Twitter</strong><span> Log In</span></p>

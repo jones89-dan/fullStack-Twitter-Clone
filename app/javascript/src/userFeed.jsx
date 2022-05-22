@@ -31,7 +31,9 @@ const UserFeed = () => {
 
   return (
     <Layout>
+    <div className="text-white">
       <h1>Welcome {username}</h1>
+    </div>
         <div className="feed">
           {usersTweets.map(tweet => {
             return (

@@ -6,6 +6,7 @@ import Layout from './layout';
 import SignUpForm from './signUpForm'
 
 
+
 const Home = props => (
   <Layout>
     <SignUpForm>
