@@ -38,7 +38,7 @@ const Layout = (props) => {
             </div>
         </div>
       </nav>
-      <div className="container py-3 pb-5 mb-5">
+      <div className="no-left container py-3 mb-5">
         {props.children}
       </div>
       <footer className="fixed-bottom p-3 bg-dark">

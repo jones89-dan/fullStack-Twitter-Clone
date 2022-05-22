@@ -4,6 +4,7 @@ import $ from 'jquery';
 import { createUser, signInUser, authenticate } from './requests'
 import './home.scss';
 import Layout from './layout';
+import image from '../images/spacex.jpg';
 
 const SignUpForm  = () => {
 
@@ -51,8 +52,12 @@ const SignUpForm  = () => {
   }
 
     return (
-        <div className="login-signup">
-            <div className="float-right sign-up col-xs-4 col-xs-offset-1">
+      <div className="row">
+        <div id="homeLeft" className="col-6 d-none d-lg-flex px-0">
+          <img className="img-fluid pr-4 ps-0" src={image} alt="space x launch"></img>
+        </div>
+        <div className="login-signup col-6">
+            <div className="float-right sign-up ">
               <form onSubmit={handleFormSubmission}>
                 <div className="new-to-t">
                   <p><strong>New to Twitter?</strong><span> Sign Up</span></p>
@@ -70,21 +75,22 @@ const SignUpForm  = () => {
               </form>
             </div>
 
-            <div className="sign-in col-xs-4 pt-4 col-xs-offset-1">
-              <form onSubmit={logIn}>
-                <div className="signin-to-t">
-                  <p><strong>Welcome back to Twitter</strong><span> Log In</span></p>
-                </div>
-                <div className="form-group">
-                  <input type="text" className="form-control usernameInput" placeholder="Username"/>
-                </div>
-                <div className="form-group">
-                  <input type="password" className="form-control passwordInput" placeholder="Password"/>
-                </div>
-                <button type="submit" id="log-in-btn" className="btn btn-default btn-warning pull-right">Log In</button>
-              </form>
-            </div>
+              <div className="sign-in ">
+                <form onSubmit={logIn}>
+                  <div className="signin-to-t">
+                    <p><strong>Welcome back to Twitter</strong><span> Log In</span></p>
+                  </div>
+                  <div className="form-group">
+                    <input type="text" className="form-control usernameInput" placeholder="Username"/>
+                  </div>
+                  <div className="form-group">
+                    <input type="password" className="form-control passwordInput" placeholder="Password"/>
+                  </div>
+                  <button type="submit" id="log-in-btn" className="btn btn-default btn-warning pull-right">Log In</button>
+                </form>
+              </div>
           </div>
+        </div>
 
     )
 }
