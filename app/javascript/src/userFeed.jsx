@@ -17,7 +17,7 @@ const UserFeed = () => {
   const removeTweet = (event) => {
     var id = event.target.dataset.id;
     deleteTweet(id, function () {
-      indexTweets(allTweets);
+      userIndexTweets(username, allTweets);
     });
   }
 
