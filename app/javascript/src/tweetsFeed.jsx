@@ -64,7 +64,7 @@ const TweetsFeed = () => {
             return (
               <div className="tweet col-xs-12" key={tweet.id}>
 
-                <a className="tweet-screenName" href={"/" + currentUser}>@{tweet.username}</a>
+                <a className="tweet-screenName" href={"/" + tweet.username}>@{tweet.username}</a>
                 <p>{tweet.message}</p>
                 <a className="delete-tweet" data-id={tweet.id} onClick={removeTweet}>Delete</a>
               </div>
