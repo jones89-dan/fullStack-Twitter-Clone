@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { logOutUser, getCurrentUser } from './requests';
+import './home.scss';
 
 const Layout = (props) => {
 
@@ -40,7 +41,7 @@ const Layout = (props) => {
       <div className="container py-3">
         {props.children}
       </div>
-      <footer className="p-3 bg-dark">
+      <footer className="footer-fixed-bottom p-3 bg-dark">
         <div className="container">
           <span className="me-3 text-secondary">Built by <a href="https://github.com/jones89-dan">jones89-Dan</a> with ☕ and ⚔️ </span>
         </div>
