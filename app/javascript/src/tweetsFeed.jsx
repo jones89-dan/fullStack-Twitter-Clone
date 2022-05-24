@@ -60,7 +60,7 @@ const TweetsFeed = () => {
             <textarea type="text" className="form-control post-input a-tweet" rows="3" placeholder="What's happening?"></textarea>
             <div className="pull-right">
               <label id="upload-image-btn" htmlFor="imageUpload">Upload image</label>
-              <img id="image-preview" src={imagePreview} alt="image preview" />
+              <img id="image-preview" src="" style={{display: 'none'}} alt="image preview" />
               <input type="file" id="imageUpload" name="image" accept="image/*" onChange={handleImage}></input>
               <span className="post-char-counter">140</span>
               <button type="submit" className="btn btn-primary" id="post-tweet-btn">Tweet</button>
@@ -76,6 +76,7 @@ const TweetsFeed = () => {
                 <a className="tweet-username" data-id={tweet.username} href={"/" + tweet.username}>@{tweet.username}</a>
                 <p>{tweet.message}</p>
                 <img className="pb-1 tweet-image" src={tweet.image}></img>
+                <br></br>
                 <a className="delete-tweet " data-id={tweet.id} onClick={removeTweet}>Delete</a>
               </div>
             )
