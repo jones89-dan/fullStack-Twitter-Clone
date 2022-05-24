@@ -88,7 +88,7 @@ export var postTweet = function (msg, image, callback) {
     formData.append('tweet[message]', msg);
   }
   if (image) {
-    formData.append('tweet[image]', image;
+    formData.append('tweet[image]', image);
   }
   var request = {
     type: 'POST',
