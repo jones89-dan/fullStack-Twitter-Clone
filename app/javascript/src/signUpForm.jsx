@@ -5,6 +5,8 @@ import { createUser, signInUser, authenticate } from './requests'
 import './home.scss';
 import Layout from './layout';
 import image from '../images/spacex.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const SignUpForm  = () => {
 
@@ -60,6 +62,8 @@ const SignUpForm  = () => {
             <div className="float-right sign-up text-white">
               <form className="p-2 rounded" onSubmit={handleFormSubmission}>
                 <div className="new-to-t">
+                <FontAwesomeIcon icon={faTwitter} size="3x"/>
+                  <h1>See what’s happening</h1>
                   <p className="text-white pt-3"><strong>New to Twitter?</strong><span> Sign Up</span></p>
                 </div>
                 <div className="form-group">
