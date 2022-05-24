@@ -53,14 +53,14 @@ const SignUpForm  = () => {
 
     return (
       <div className="row">
-        <div id="homeLeft" className="col-6 d-none d-lg-flex px-0" >
-          <img className="img-fluid pr-4 ps-0" src={image} alt="space x launch"></img>
+        <div id="homeLeft" className="border-warning col-6 d-none d-lg-flex px-0" >
+          <img className="home-image border-warning img-fluid pr-4 ps-0" src={image} alt="space x launch"></img>
         </div>
         <div className="login-signup col-6">
             <div className="float-right sign-up text-white">
-              <form onSubmit={handleFormSubmission}>
+              <form className="p-2 rounded" onSubmit={handleFormSubmission}>
                 <div className="new-to-t">
-                  <p><strong>New to Twitter?</strong><span> Sign Up</span></p>
+                  <p className="text-white pt-3"><strong>New to Twitter?</strong><span> Sign Up</span></p>
                 </div>
                 <div className="form-group">
                   <input type="text" className="form-control username" placeholder="Username"/>
@@ -75,10 +75,11 @@ const SignUpForm  = () => {
               </form>
             </div>
 
+
               <div className="sign-in text-white">
-                <form onSubmit={logIn}>
+                <form className="p-2 rounded" onSubmit={logIn}>
                   <div className="signin-to-t">
-                    <p><strong>Welcome back to Twitter</strong><span> Log In</span></p>
+                    <p className="text-white pt-3"><strong>Welcome back to Twitter</strong><span> Log In</span></p>
                   </div>
                   <div className="form-group">
                     <input type="text" className="form-control usernameInput" placeholder="Username"/>
