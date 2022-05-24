@@ -88,24 +88,19 @@ export var postTweet = function (msg, image, callback) {
     formData.append('tweet[message]', msg);
   }
   if (image) {
-    formData.append('tweet[image]', image, image.name);
+    formData.append('tweet[image]', image;
   }
-  var newRequest = {};
-  newRequest['type'] = 'POST';
-  newRequest['url'] = 'api/tweets';
-  newRequest['cache'] = false;
-  newRequest['contentType'] = false;
-  newRequest['processData'] = false;
-  newRequest['xhrFields'] = { 'withCredentials': true };
-  newRequest['data'] = formData;
-  newRequest['success'] = function(response){
-    console.log(response);
-    console.log(msg);
-    return callback({'success': true});
-  };
-  newRequest['error'] = function(request, error){
-    console.log(request);
-    console.log(error);
+  var request = {
+    type: 'POST',
+    url: 'api/tweets',
+    cache: false,
+    contentType: false,
+    processData: false,
+    xhrFields: { 'withCredentials': true },
+    data: formData,
+    success: function (response) {
+      callback(response);
+    }
   };
   $.ajax(newRequest);
 };

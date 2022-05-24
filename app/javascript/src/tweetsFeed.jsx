@@ -9,6 +9,7 @@ const TweetsFeed = () => {
 
   const [tweets, setTweets] = useState([]);
   const [currentUser, setCurrentUser] = useState("");
+  const [imagePreview, setImagePreview] = useState("");
 
   const allTweets = function (response) {
     setTweets(response.tweets.map(tweet => tweet));
@@ -17,8 +18,8 @@ const TweetsFeed = () => {
   const newTweet = (event) => {
     event.preventDefault();
     var message = $('.a-tweet').val();
-    var img = document.getElementById('image-select').files[0];
-
+    var imageUpload = document.getElementById('image-select').files[0];
+    var img = imageUpload.files[0];
     postTweet(message, img, function (response) {
       if (response.success == false) {
         console.log("Ooops, something went wrong");
@@ -30,6 +31,11 @@ const TweetsFeed = () => {
       }
     });
   }
+
+  const handleImage = function (event) {
+    var source = URL.createObjectURL(event.target.files[0]);
+    setImagePreview(source);
+  };
 
   const removeTweet = (event) => {
     var id = event.target.dataset.id;
@@ -54,7 +60,7 @@ const TweetsFeed = () => {
             <div className="pull-right">
               <label id="upload-image-btn" htmlFor="image-select">Upload image</label>
               <img id="image-preview" src="" alt="image preview" style={{display: 'none'}} />
-              <input type="file" id="image-select" name="image" accept="image/*" />
+              <input type="file" id="image-select" name="image" accept="image/*" onChange={imageHandler}/>
               <span className="post-char-counter">140</span>
               <button type="submit" className="btn btn-primary" id="post-tweet-btn">Tweet</button>
             </div>
