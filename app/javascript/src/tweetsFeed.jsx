@@ -18,7 +18,7 @@ const TweetsFeed = () => {
   const newTweet = (event) => {
     event.preventDefault();
     var message = $('.a-tweet').val();
-    var imageUpload = document.getElementById('image-select').files[0];
+    var imageUpload = document.getElementById('imageUpload');
     var img = imageUpload.files[0];
     postTweet(message, img, function (response) {
       if (response.success == false) {
@@ -26,6 +26,7 @@ const TweetsFeed = () => {
       }
       else {
         $('.a-tweet').val('');
+        setImagePreview("");
         indexTweets(allTweets);
         console.log("tweet posted successfully!");
       }
@@ -58,9 +59,9 @@ const TweetsFeed = () => {
           <div className="col-xs-12 post-tweet-box">
             <textarea type="text" className="form-control post-input a-tweet" rows="3" placeholder="What's happening?"></textarea>
             <div className="pull-right">
-              <label id="upload-image-btn" htmlFor="image-select">Upload image</label>
-              <img id="image-preview" src="" alt="image preview" style={{display: 'none'}} />
-              <input type="file" id="image-select" name="image" accept="image/*" onChange={imageHandler}/>
+              <label id="upload-image-btn" htmlFor="imageUpload">Upload image</label>
+              <img id="image-preview" src={imagePreview} alt="image preview" />
+              <input type="file" id="imageUpload" name="image" accept="image/*" onChange={handleImage}></input>
               <span className="post-char-counter">140</span>
               <button type="submit" className="btn btn-primary" id="post-tweet-btn">Tweet</button>
             </div>

@@ -102,7 +102,7 @@ export var postTweet = function (msg, image, callback) {
       callback(response);
     }
   };
-  $.ajax(newRequest);
+  $.ajax(request);
 };
 
 // Index Tweets
