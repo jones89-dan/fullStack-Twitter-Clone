@@ -18,6 +18,12 @@ const Layout = (props) => {
     });
   };
 
+  useEffect(() => {
+    getCurrentUser(function (response) {
+      setCurrentUser(response.username);
+    });
+  });
+
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
@@ -26,10 +32,10 @@ const Layout = (props) => {
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link" href="/">Home</a>
+                  <a className="nav-link" href="/tweetsFeed">Home</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/tweetsFeed">Tweets</a>
+                  <a className="nav-link" href={"/" + currentUser}>Tweets</a>
                 </li>
                 <li className="nav-item">
               <a className="nav-link" onClick={handleLogout}>Logout</a>

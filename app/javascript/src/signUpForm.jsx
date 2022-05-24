@@ -75,7 +75,6 @@ const SignUpForm  = () => {
               </form>
             </div>
 
-
               <div className="sign-in text-white">
                 <form className="p-2 rounded" onSubmit={logIn}>
                   <div className="signin-to-t">
