@@ -8,10 +8,10 @@ import SignUpForm from './signUpForm'
 
 
 const Home = props => (
-  <Layout>
+
     <SignUpForm>
     </SignUpForm>
-  </Layout>
+
 )
 
 document.addEventListener('DOMContentLoaded', () => {
