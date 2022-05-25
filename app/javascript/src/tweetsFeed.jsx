@@ -54,33 +54,71 @@ const TweetsFeed = () => {
 
   return (
     <Layout>
-      <form onSubmit={newTweet}>
-        <div className="col-xs-6 feed-box text-white">
-          <div className="col-xs-12 post-tweet-box">
-            <textarea type="text" className="form-control post-input a-tweet" rows="3" placeholder="What's happening?"></textarea>
-            <div className="pull-right">
-              <label id="upload-image-btn" htmlFor="imageUpload">Upload image</label>
-              <img id="image-preview" src="" style={{display: 'none'}} alt="image preview" />
-              <input type="file" id="imageUpload" name="image" accept="image/*" onChange={handleImage}></input>
-              <span className="post-char-counter">140</span>
-              <button type="submit" className="btn btn-primary" id="post-tweet-btn">Tweet</button>
+    <div className="main container">
+      <div className="row">
+        <div className="col-xs-3 profile-trends">
+          <div className="profileCard col-xs-12">
+            <div className="profileCard-content">
+              <div className="user-field col-xs-12">
+                <a className="username" href={"/" + currentUser}>{currentUser}</a><br></br>
+                <a className="screenName" href="#">@User</a>
+              </div>
+                <div className="user-stats">
+                  <div className="col-xs-3">
+                    <a href="">
+                      <span>Tweets<br></br></span>
+                      <span className="user-stats-tweets">10</span>
+                    </a>
+                  </div>
+                  <div className="col-xs-4">
+                    <a href="">
+                      <span>Following<br></br></span>
+                      <span className="user-stats-following">0</span>
+                    </a>
+                  </div>
+                  <div className="col-xs-4">
+                    <a href="">
+                      <span>Followers<br></br></span>
+                      <span className="user-stats-followers">0</span>
+                    </a>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
-      </form>
-        <div className="feed mb-3">
-          {tweets.map(tweet => {
-            return (
-              <div className="tweet col-xs-12" key={tweet.id}>
+        <div className="col-xs-6 feed-box">
+          <div className="col-xs-12 post-tweet-box">
+            <form onSubmit={newTweet}>
+              <div className="col-xs-6 text-white">
 
-                <a className="tweet-username" data-id={tweet.username} href={"/" + tweet.username}>@{tweet.username}</a>
-                <p>{tweet.message}</p>
-                <img className="pb-1 tweet-image" src={tweet.image}></img>
-                <br></br>
-                <a className="delete-tweet " data-id={tweet.id} onClick={removeTweet}>Delete</a>
+                  <textarea type="text" className="form-control post-input a-tweet" rows="3" placeholder="What's happening?"></textarea>
+                  <div className="pull-right">
+                    <label id="upload-image-btn" htmlFor="imageUpload">Upload image</label>
+                    <img id="image-preview" src="" style={{display: 'none'}} alt="image preview" />
+                    <input type="file" id="imageUpload" name="image" accept="image/*" onChange={handleImage}></input>
+                    <span className="post-char-counter">140</span>
+                    <button type="submit" className="btn btn-primary" id="post-tweet-btn">Tweet</button>
+                  </div>
+
               </div>
-            )
-          })}
+            </form>
+          </div>
+              <div className="feed mb-3">
+                {tweets.map(tweet => {
+                  return (
+                    <div className="tweet col-xs-12" key={tweet.id}>
+
+                      <a className="tweet-username" data-id={tweet.username} href={"/" + tweet.username}>@{tweet.username}</a>
+                      <p>{tweet.message}</p>
+                      <img className="pb-1 tweet-image" src={tweet.image}></img>
+                      <br></br>
+                      <a className="delete-tweet " data-id={tweet.id} onClick={removeTweet}>Delete</a>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
         </div>
       </Layout>
     )
