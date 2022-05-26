@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { logOutUser, getCurrentUser } from './requests';
 import './home.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const Layout = (props) => {
 
@@ -28,7 +30,7 @@ const Layout = (props) => {
     <React.Fragment>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="container">
-          <a className="navbar-brand" href='/'>Twitter Clone</a>
+          <a className="navbar-brand" href='/'><FontAwesomeIcon icon={faTwitter} size="lg"/></a>
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav">
                 <li className="nav-item">

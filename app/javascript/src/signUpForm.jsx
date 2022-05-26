@@ -17,7 +17,7 @@ const SignUpForm  = () => {
       }
     });
   };
-  
+
 // Create a new user
   const handleFormSubmission = (event) => {
     event.preventDefault();
