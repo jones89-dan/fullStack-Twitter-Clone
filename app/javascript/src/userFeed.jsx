@@ -62,7 +62,7 @@ const UserFeed = () => {
           <div className="profileCard col-s-12">
             <div className="profileCard-content">
               <div className="user-field col-xs-12">
-                <a className="username" href={"/" + currentUser}>{currentUser}</a><br></br>
+                <a className="username" href={"/" + username}>{username}</a><br></br>
                 <a className="screenName" href="#">@User</a>
               </div>
                 <div className="user-stats">
