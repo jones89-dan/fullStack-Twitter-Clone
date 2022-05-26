@@ -110,8 +110,7 @@ const TweetsFeed = () => {
 
                       <a className="tweet-username" data-id={tweet.username} href={"/" + tweet.username}>@{tweet.username}</a>
                       <p>{tweet.message}</p>
-                      <img className="pb-1 tweet-image" src={tweet.image}></img>
-                      <br></br>
+                      <img className="pb-1 tweet-image img-thumbnail" src={tweet.image}></img>
                       <a className="delete-tweet " data-id={tweet.id} onClick={removeTweet}>Delete</a>
                     </div>
                   )
