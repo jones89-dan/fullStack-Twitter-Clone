@@ -41,7 +41,7 @@ const UserFeed = () => {
 
                 <a className="tweet-screenName" href={"/" + tweet.username}>@{tweet.username}</a>
                 <p>{tweet.message}</p>
-                <img className="pb-1 tweet-image" src={tweet.image}></img>
+                <img className="tweet-image" src={tweet.image}></img>
                 <br></br>
                 <a className="delete-tweet" data-id={tweet.id} onClick={removeTweet}>Delete</a>
               </div>
