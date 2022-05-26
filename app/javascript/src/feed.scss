@@ -75,6 +75,11 @@
 
 .feed-box {
   width: 600px;
+  border-radius: 5px;
+}
+
+.feed {
+  border-radius: 5px;
 }
 
 .post-tweet-box {
@@ -118,6 +123,8 @@
   border: 1px solid #BFE0EC;
   border-top: none;
   padding: 30px 20px;
+  border-radius: 5px;
+
 }
 
 .tweet-username {
