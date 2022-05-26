@@ -90,7 +90,6 @@ const TweetsFeed = () => {
           <div className="col-xs-12 post-tweet-box">
             <form onSubmit={newTweet}>
               <div className="col-xs-6 text-white">
-
                   <textarea type="text" className="form-control post-input a-tweet" rows="3" placeholder="What's happening?"></textarea>
                   <div className="pull-right">
                     <label id="upload-image-btn" htmlFor="imageUpload">Upload image</label>
@@ -99,7 +98,6 @@ const TweetsFeed = () => {
                     <span className="post-char-counter">140</span>
                     <button type="submit" className="btn btn-primary" id="post-tweet-btn">Tweet</button>
                   </div>
-
               </div>
             </form>
           </div>
