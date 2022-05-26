@@ -1,5 +1,7 @@
 # Twitter Clone (Advanced with Mailer, Search, Photo Upload)
 
+check out the site: https://dj-twitter-clone.herokuapp.com/
+
 Visit [Altcademy Classroom](https://www.altcademy.com/classroom/) for more instructions.
 
 1. Install GEMS
