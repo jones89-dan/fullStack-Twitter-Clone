@@ -58,8 +58,8 @@ const UserFeed = () => {
     <Layout>
     <div className="main container">
       <div className="row">
-        <div className="col-xs-3 profile-trends">
-          <div className="profileCard col-xs-12">
+        <div className="col-s-12 profile-trends">
+          <div className="profileCard col-s-12">
             <div className="profileCard-content">
               <div className="user-field col-xs-12">
                 <a className="username" href={"/" + currentUser}>{currentUser}</a><br></br>

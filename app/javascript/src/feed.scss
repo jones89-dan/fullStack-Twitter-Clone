@@ -2,6 +2,12 @@
   width: 290px;
 }
 
+@media only screen and (max-width: 992px) {
+  .profile-trends, .follow-footnote {
+    width: 600px;
+  }
+}
+
 .profileCard {
   background: #fff;
   padding: 10px 0;
