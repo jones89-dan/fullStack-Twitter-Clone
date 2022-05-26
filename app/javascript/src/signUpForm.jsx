@@ -10,6 +10,14 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const SignUpForm  = () => {
 
+  function authenRedirect() {
+    authenticate(function(response) {
+      if(response.authenticated) {
+        window.location.replace("/tweetsFeed");
+      }
+    });
+  };
+  
 // Create a new user
   const handleFormSubmission = (event) => {
     event.preventDefault();
@@ -19,11 +27,17 @@ const SignUpForm  = () => {
     var userPassword = $('.password').val();
 
     createUser(userName, userEmail, userPassword, function (response) {
+      signInUser(userName, userPassword, function(){
+        authenRedirect();
+      });
       if (response.success == false) {
         console.log(response.error);
       }
       else {
         console.log('User ' + userName + ' signed up')
+        signInUser(userName, userPassword, function(){
+          authenRedirect();
+        });
       }
     });
   }
