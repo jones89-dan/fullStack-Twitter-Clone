@@ -2,6 +2,13 @@
   float: right;
 }
 
+@media only screen and (max-width: 992px) {
+  .login-signup {
+    margin: auto;
+    width: 50%;
+  }
+}
+
 .home-image {
   color: blue !important;
   border: 20px !important;
