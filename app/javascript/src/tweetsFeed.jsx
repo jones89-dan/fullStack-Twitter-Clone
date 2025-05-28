@@ -3,16 +3,22 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Layout from './layout';
 import './feed.scss';
-import { postTweet, indexTweets, deleteTweet, getCurrentUser } from './requests'
+import { postTweet, indexTweets, deleteTweet, getCurrentUser, countUserTweets } from './requests'
 
 const TweetsFeed = () => {
 
   const [tweets, setTweets] = useState([]);
   const [currentUser, setCurrentUser] = useState("");
   const [imagePreview, setImagePreview] = useState("");
+  const [count, setCount] = useState();
 
   const allTweets = function (response) {
     setTweets(response.tweets.map(tweet => tweet));
+  };
+
+  // user the callback function response to set the users tweet count
+  const tweetCount = function (response) {
+    setCount(response.count);
   };
 
   const newTweet = (event) => {
@@ -26,7 +32,7 @@ const TweetsFeed = () => {
       }
       else {
         $('.a-tweet').val('');
-        setImagePreview("");
+        setImagePreview('');
         indexTweets(allTweets);
         console.log("tweet posted successfully!");
       }
@@ -50,6 +56,8 @@ const TweetsFeed = () => {
       setCurrentUser(response.username);
     });
     indexTweets(allTweets);
+    // Get a count of users tweets on load
+    countUserTweets(tweetCount);
   }, []);
 
   return (
@@ -67,7 +75,7 @@ const TweetsFeed = () => {
                   <div className="col-xs-3">
                     <a href="">
                       <span>Tweets<br></br></span>
-                      <span className="user-stats-tweets">10</span>
+                      <span className="user-stats-tweets">{count}</span>
                     </a>
                   </div>
                   <div className="col-xs-4">

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     delete '/tweets/:id'           => 'tweets#destroy'
     get  '/users/:username/tweets' => 'tweets#index_by_user'
     get  '/tweets/search/:keyword' => 'tweets#search'
+    get  '/tweetCount'             => 'tweets#user_tweet_count'
 
   end
 

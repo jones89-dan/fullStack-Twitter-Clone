@@ -158,3 +158,14 @@ export var userIndexTweets = function (username, callback) {
   }
   $.ajax(request);
 }
+
+// Count users Tweets
+export var countUserTweets = function (successCB, errorCB) {
+  var request = {
+    type: 'GET',
+    url: 'api/tweetCount/',
+    success: successCB,
+    error: errorCB
+  };
+  $.ajax(request);
+};
